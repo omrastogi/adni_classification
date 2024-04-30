@@ -1,0 +1,7 @@
+data/
+wandb/
+model_path.pth
+credentials.json
+*.pth
+*.nii
+*.zip
