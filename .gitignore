@@ -1,5 +1,7 @@
 data/
 wandb/
+MedicalNet_pytorch_files2/
+features/
 model_path.pth
 credentials.json
 *.pth

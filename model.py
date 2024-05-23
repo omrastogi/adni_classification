@@ -46,10 +46,15 @@ if __name__ == "__main__":
     braindataset = BrainDataset(data_dir="/data2/om/ADNI dataset/data")
     dataloader = DataLoader(braindataset, batch_size=8, shuffle=True)
     model = AlzheimerDetectionModel()
-    for data, labels in dataloader:
-        print(data.shape)
-        break
-    # data = braindataset[0][0].unsqueeze(0).unsqueeze(0)
-    out = model(data)
-    # print(out)
-    print(data.shape, out.shape)
+    total_params = sum(p.numel() for p in model.parameters())
+
+    for name, param in model.named_parameters():
+        print(f"{name}: {param.size()}")
+        print(f"size: {param.numel()}")
+
+        
+    # for data, labels in dataloader:
+    #     print(data.shape)
+    #     break
+    # out = model(data)
+    # print(data.shape, out.shape)
